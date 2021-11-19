@@ -16,3 +16,9 @@ result_purple_to_gray = "result_purple_to_gray.png"
 result_purple_to_green = "result_purple_to_green.png"
 result_purple_to_gold = "result_purple_to_gold.png"
 result_purple_to_blue = "result_purple_to_blue.png"
+
+# From Gold
+result_gold_to_red = "result_gold_to_red.png"
+result_gold_to_purple = "result_gold_to_purple.png"
+result_gold_to_blue = "result_gold_to_blue.png"
+

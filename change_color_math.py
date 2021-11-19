@@ -7,6 +7,7 @@
 import cv2
 import numpy as np
 import config
+
 red = np.array([255, 0, 0])
 gold = np.array([255, 215, 0])
 blue = np.array([0, 0, 255])
@@ -68,16 +69,44 @@ img2[:, :, 1] = img[:, :, 2] + 40
 img2[:, :, 2] = img[:, :, 0] + 40
 cv2.imwrite(config.result_purple_to_gold, img2)
 
-# change purple to red
-print(img[int(img.shape[0] / 2), int(img.shape[1] / 2), 2])
-print(img[int(img.shape[0] / 2), int(img.shape[1] / 2), 1])
-print(img[int(img.shape[0] / 2), int(img.shape[1] / 2), 0])
+# change purple to blue
+# print(np.average(img, axis=(0, 1)))
+# print(img[int(img.shape[0] / 2), int(img.shape[1] / 2), 1])
+# print(img[int(img.shape[0] / 2), int(img.shape[1] / 2), 0])
 
-img2[:, :, 2] = img[:, :, 0] / 2 + 255 / 2
-img2[:, :, 1] = img[:, :, 1] - 255
-img2[:, :, 0] = img[:, :, 2] * 2 - 255
+img2[:, :, 0] = img[:, :, 0] * 3
+img2[:, :, 1] = img[:, :, 1]
+img2[:, :, 2] = img[:, :, 2] / 8
 
-print(img2[int(img2.shape[0] / 2), int(img2.shape[1] / 2), 0])
-print(img2[int(img2.shape[0] / 2), int(img2.shape[1] / 2), 1])
-print(img2[int(img2.shape[0] / 2), int(img2.shape[1] / 2), 2])
+# print(np.average(img2, axis=(0, 1)))
 cv2.imwrite(config.result_purple_to_blue, img2)
+
+# From Gold
+# change gold to blue
+img = cv2.imread(config.img_gold)
+img2 = np.zeros((img.shape[0], img.shape[1], 3))
+# print(np.average(img, axis=(0, 1)))
+img2[:, :, 0] = img[:, :, 2]
+img2[:, :, 1] = img[:, :, 0]
+img2[:, :, 2] = img[:, :, 0]
+# print(np.average(img2, axis=(0, 1)))
+cv2.imwrite(config.result_gold_to_blue, img2)
+
+# change gold to purple
+img2 = np.zeros((img.shape[0], img.shape[1], 3))
+print(np.average(img, axis=(0, 1)))
+img2[:, :, 0] = img[:, :, 2]
+img2[:, :, 1] = img[:, :, 0]
+img2[:, :, 2] = img[:, :, 1]
+print(np.average(img2, axis=(0, 1)))
+cv2.imwrite(config.result_gold_to_purple, img2)
+
+# change gold to red
+img2 = np.zeros((img.shape[0], img.shape[1], 3))
+print(np.average(img, axis=(0, 1)))
+img2[:, :, 0] = img[:, :, 2]
+img2[:, :, 1] = img[:, :, 0]
+img2[:, :, 2] = img[:, :, 1]
+print(np.average(img2, axis=(0, 1)))
+cv2.imwrite(config.result_gold_to_red, img2)
+

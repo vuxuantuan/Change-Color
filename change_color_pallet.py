@@ -28,7 +28,7 @@ def change_of_color_pallet(img_pallet, color_id_1, color_id_2):
             pass
         # output is purple
         if color_id_2 == 3:
-            pass
+            img_result = change_gold_to_purple(img_pallet)
     # input is blue
     elif color_id_1 == 2:
         # output is red
@@ -50,5 +50,5 @@ def change_of_color_pallet(img_pallet, color_id_1, color_id_2):
             img_result = change_purple_to_gold(img_pallet)
         # output is blue
         if color_id_2 == 2:
-            pass
+            img_result = change_purple_to_red(img_pallet)
     return img_result
