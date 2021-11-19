@@ -13,7 +13,6 @@ blue = np.array([0, 0, 255])
 purple = np.array([128, 0, 128])
 
 # change blue to gold
-
 img = cv2.imread(config.img_blue)
 img = img.astype(np.uint8)
 # img = cv2.cvtColor(cv2.COLOR_BGR2RGB)
@@ -35,7 +34,7 @@ img2[:, :, 1] = img[:, :, 2]
 img2[:, :, 2] = (img[:, :, 0] + 255) / 2
 cv2.imwrite(config.result_blue_to_purple, img2)
 
-# change blue to purple
+# change blue to red
 img2[:, :, 0] = img[:, :, 1]
 img2[:, :, 1] = img[:, :, 1]
 img2[:, :, 2] = img[:, :, 0]
@@ -74,11 +73,11 @@ print(img[int(img.shape[0] / 2), int(img.shape[1] / 2), 2])
 print(img[int(img.shape[0] / 2), int(img.shape[1] / 2), 1])
 print(img[int(img.shape[0] / 2), int(img.shape[1] / 2), 0])
 
-img2[:, :, 0] = img[:, :, 2] / 2 + 255 / 2
+img2[:, :, 2] = img[:, :, 0] / 2 + 255 / 2
 img2[:, :, 1] = img[:, :, 1] - 255
-img2[:, :, 2] = img[:, :, 0] * 2 - 255
+img2[:, :, 0] = img[:, :, 2] * 2 - 255
 
 print(img2[int(img2.shape[0] / 2), int(img2.shape[1] / 2), 0])
 print(img2[int(img2.shape[0] / 2), int(img2.shape[1] / 2), 1])
 print(img2[int(img2.shape[0] / 2), int(img2.shape[1] / 2), 2])
-cv2.imwrite(config.result_purple_to_red, img2)
+cv2.imwrite(config.result_purple_to_blue, img2)
